@@ -3,6 +3,7 @@ const itemsRouter = express.Router()
 const Item = require('../models/Item')
 
 itemsRouter.get('/', async (req, res) => {
+    console.log(req)
     const allItems = await Item.findAll()
     res.send(allItems)
 })
