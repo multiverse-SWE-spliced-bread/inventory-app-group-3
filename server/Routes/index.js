@@ -1,8 +1,6 @@
-const express = require('express');
-const router = express.Router();
 
-//Model routers
-router.use('/items', require('./items'))
+const itemsRouter = require('./items')
+const usersRouter = require('./users')
 
+module.exports = { itemsRouter, usersRouter }
 
-module.exports = router

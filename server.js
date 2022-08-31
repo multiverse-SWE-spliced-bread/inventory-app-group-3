@@ -1,8 +1,11 @@
 const express = require('express');
-const app = require('./server/app');
-const { seed } = require('./server/seed')
+const app = express()
+const seed = require('./server/seed')
+const { itemsRouter, usersRouter } = require('./server/Routes')
 // const port = 3001;
 const PORT = process.env.PORT || 3001;
+
+app.use('/items', itemsRouter)
 
 // app.listen(()=>{
 //     console.log(`App listening on port ${port}`)

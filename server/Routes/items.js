@@ -1,18 +1,19 @@
 const express = require("express")
-const router = express.Router()
-const { User, Item } = require('../models')
+const itemsRouter = express.Router()
+const Item = require('../models/Item')
 
-router.get('/', async (req, res) => {
-    const allItems = await Item.findAll(req.body)
+itemsRouter.get('/', async (req, res) => {
+    const allItems = await Item.findAll()
     res.send(allItems)
 })
 
-router.get('/:id', async (req, res) => {
+/*
+itemsRouter.get('/:id', async (req, res) => {
     const oneItem = await Item.findByPk(req.params.id)
     res.send(oneItem)
 })
 
-router.get('/belowTen', async (req, res) => {
+itemsRouter.get('/belowTen', async (req, res) => {
 
     const allItems = await Item.findAll(req.params.id)
     let belowTenItems = []
@@ -25,7 +26,7 @@ router.get('/belowTen', async (req, res) => {
     res.send(belowTenItems)
 })
 
-router.get('/belowTwenty', async (req, res) => {
+itemsRouter.get('/belowTwenty', async (req, res) => {
 
     const allItems = await Item.findAll(req.params.id)
     let belowTwentyItems = []
@@ -38,7 +39,7 @@ router.get('/belowTwenty', async (req, res) => {
     res.send(belowTwentyItems)
 })
 
-router.get('/belowThirty', async (req, res) => {
+itemsRouter.get('/belowThirty', async (req, res) => {
 
     const allItems = await Item.findAll(req.params.id)
     let belowThirtyItems = []
@@ -51,7 +52,7 @@ router.get('/belowThirty', async (req, res) => {
     res.send(belowThirtyItems)
 })
 
-router.get('/belowFourty', async (req, res) => {
+itemsRouter.get('/belowFourty', async (req, res) => {
 
     const allItems = await Item.findAll(req.params.id)
     let belowFourtyItems = []
@@ -64,7 +65,7 @@ router.get('/belowFourty', async (req, res) => {
     res.send(belowFourtyItems)
 })
 
-router.get('/:category', async (req, res) => {
+itemsRouter.get('/:category', async (req, res) => {
     const allItems = await Item.findAll( {
         where: {
             category: req.params.category
@@ -75,12 +76,12 @@ router.get('/:category', async (req, res) => {
 
 
 /*
-router.delete('/:id', async (req, res) => {
+itemsRouter.delete('/:id', async (req, res) => {
     const oneItem = await Item.findByPk(req.params.id)
     res.send(oneItem)
 }) //fix it doesnt work
 */
 
-module.exports = router
+module.exports = itemsRouter
 
 
