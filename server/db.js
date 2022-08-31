@@ -7,3 +7,5 @@ const db = new Sequelize({
 })
 
 module.exports = db
+
+// I can't hear you lol
