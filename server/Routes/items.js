@@ -3,7 +3,7 @@ const router = express.Router()
 const { User, Item } = require('../models')
 
 router.get('/', async (req, res) => {
-    const allItems = await Item.findAll()
+    const allItems = await Item.findAll(req.body)
     res.send(allItems)
 })
 
