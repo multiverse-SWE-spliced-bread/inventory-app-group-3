@@ -2,8 +2,8 @@
 
 const {sauces, items} = require('./seedData.js');
 
-const {db} = require('./db');
-const {Item} = require('./models');
+const db = require('./db');
+const Item = require('./models');
 
 
 const seed = async () => {
