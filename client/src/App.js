@@ -1,24 +1,29 @@
-import logo from './logo.svg';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <div>
+         <h1>Inventory App</h1>
+         <h2>Tier 1</h2>
+          <ul>
+            <li>As user: I want to view all items in the inventory</li>
+            <li>As user: I want to view an individual Item</li>
+          </ul><br></br>
+          <h2>Tier 2</h2>
+          <ul>
+            <li>As user: I want to add a item by completing a form</li>
+          </ul><br></br>
+          <h2>Tier 3</h2>
+          <ul>
+            <li>As user: I want to remover an item from the inventory</li>
+          </ul><br></br>
+          <h2>Tier 4</h2>
+          <ul>
+            <li>As user: I want to edit and update an item</li>
+          </ul>
+      </div>
+    
   );
 }
 
