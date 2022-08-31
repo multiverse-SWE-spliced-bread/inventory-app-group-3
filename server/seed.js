@@ -3,7 +3,7 @@
 const {sauces, items} = require('./seedData.js');
 
 const db = require('./db');
-const Item = require('./models');
+const Item = require('./Models/Item');
 
 
 const seed = async () => {
