@@ -1,7 +1,7 @@
 const db = require('../db');
 const { Sequelize, DataTypes } = require('sequelize');
 
-const item = db.define('Item', {
+const Item = db.define('Item', {
     name: {
         type: DataTypes.STRING
     },
@@ -19,4 +19,4 @@ const item = db.define('Item', {
     },
 })
 
-module.exports = item;
+module.exports = Item;

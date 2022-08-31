@@ -1,6 +1,6 @@
 const express = require('express');
 const app = require('./server/app');
-const db = require('./server/db')
+const { seed } = require('./server/seed')
 // const port = 3001;
 const PORT = process.env.PORT || 3001;
 
@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 
 const init = async () => {
   try {
-    await db.sync();
+    await seed();
 
     app.listen(PORT, () => {
       console.log(`Server listening at http://localhost:${PORT}`);
