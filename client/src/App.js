@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import apiURL from './api';
+import { ItemsList } from './components/ItemsList';
 
 
 export const App = () => {
   
   const [resoursceType, setResourceType] = useState('Wecome to your Inventory App')
-  const [items, setItems] = useState (['item1 ', 'item2 ', 'item3']);
+  const [items, setItems] = useState ([]);
+  const [viewItems, setViewItems] = useState(false);
   
   async function fetchItems(){
     try {
@@ -17,6 +19,11 @@ export const App = () => {
       console.log('Oh no an error!', err)
     }
   }
+
+  const clicked = () => {
+        
+    setViewItems(true) 
+}
 
   useEffect(() => {
     fetchItems();
@@ -34,8 +41,9 @@ export const App = () => {
           <button className='btn' onClick={()=> setResourceType('Edit or update an Item')}>Edit or Update</button>
         </div>
         <h1>{resoursceType}</h1>
-        {/* <h1>{items}</h1> */}
-        {/* {fetchItems={fetchItems}} */}
+        <ItemsList items={items} setItems={setItems} fetchItems={fetchItems}/>
+        {viewItems ? {resoursceType} : <ItemsList items={items} setItems={setItems} fetchItems={fetchItems}/> }
+        <button className='btn' onClick={clicked}>Create Page</button>
       </main>
     
   );
