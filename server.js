@@ -2,9 +2,10 @@ const express = require('express');
 const app = express()
 const seed = require('./server/seed')
 const { itemsRouter, usersRouter } = require('./server/Routes')
+const cors = require('cors')
 // const port = 3001;
 const PORT = process.env.PORT || 3000;
-
+app.use(cors());
 app.use('/items', itemsRouter)
 
 // app.listen(()=>{
