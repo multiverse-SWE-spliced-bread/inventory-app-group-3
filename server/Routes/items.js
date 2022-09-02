@@ -8,12 +8,13 @@ itemsRouter.get('/', async (req, res) => {
     res.send(allItems)
 })
 
-/*
+
 itemsRouter.get('/:id', async (req, res) => {
     const oneItem = await Item.findByPk(req.params.id)
     res.send(oneItem)
 })
 
+/*
 itemsRouter.get('/belowTen', async (req, res) => {
 
     const allItems = await Item.findAll(req.params.id)
