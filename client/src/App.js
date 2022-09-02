@@ -60,18 +60,22 @@ export const App = () => {
           <h1>Stock Management</h1>
           {/* <h3>{singleItem}</h3> */}
           <h3>Please click on the buttons to retrieve information</h3>
-          <button className='btn' onClick={()=> clicked()}>View All Items</button>
-          <button className='btn' onClick={()=> setResourceType('Here there is a single Item')}>View a Single Item</button>
-          <button className='btn' onClick={addButtonClicked}>Create Item</button>
-          <button className='btn' style={{background: 'red'}} onClick={()=> setResourceType('Are you sure you want to delete an Item?')}>Remove an Item</button>
-          <button className='btn' onClick={()=> setResourceType('Edit or update an Item')}>Edit or Update</button>
+          <div id='btns-container'>
+            <button className='btn' onClick={()=> clicked()}>View All Items</button>
+            <button className='btn' onClick={()=> setResourceType('Here there is a single Item')}>View a Single Item</button>
+            <button className='btn' onClick={addButtonClicked}>Create Item</button>
+            <button className='btn' id='remove-btn' onClick={()=> setResourceType('Are you sure you want to delete an Item?')}>Remove an Item</button>
+            <button className='btn' onClick={()=> setResourceType('Edit or update an Item')}>Edit or Update</button>
+          </div>
         </div>
         {isAddingItem ? <AddItem/> : <h1>We hope you are having a great day,</h1>}
         <h1>{resoursceType}</h1>
         
+        <div className='items-box'>
         {
         (viewItems) && <ItemsList items={items} setItems={setItems} fetchItems={fetchItems}/>
         }
+        </div>
         
         
       </main>
