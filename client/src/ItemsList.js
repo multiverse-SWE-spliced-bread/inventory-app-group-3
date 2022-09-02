@@ -20,11 +20,11 @@ export const ItemsList = ({items}) => {
 
 
 	return <>
-		{
-			items.map((item, i) => {
-				return <h3 key={i}
-				>{items.title}</h3>
-			})
-		}
+			{
+				items.map((item, i) => {
+					return <h3 key={i}
+					>{items.title}</h3>
+				})
+			}
 	</>
 } 

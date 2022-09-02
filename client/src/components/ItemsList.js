@@ -5,7 +5,10 @@ export const ItemsList = ({items}) => {
         {
             items.map((item, idx) => {
                 return <>
-                    <h3>{item.title}{<img src="${item.image}"/>}</h3>
+                    <div id="single-item-container">
+                        {<img src="${item.image}"/>}
+                        <h3>{item.title}</h3>
+                    </div>
                 </>
             })
         }
