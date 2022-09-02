@@ -1,4 +1,5 @@
 body {
+  background-color: #fcedff;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -25,4 +26,11 @@ body {
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+}
+
+.input-field {
+  width: 150px;
+  padding: 5px;
+  border-radius: 5px;
+  border: 2px solid steelblue;
 }

@@ -5,9 +5,19 @@ export const ItemsList = ({items}) => {
         {
             items.map((item, idx) => {
                 return <>
-                    <h3>{item.title}</h3>
+                    <h3>{item.title}{<img src="${item.image}"/>}</h3>
                 </>
             })
         }
     </>)
 }
+
+// export const SingleItem = ({item}) => {
+//     return(<>
+//         {
+//             item.map((item, idx) => {
+
+//             } )
+//         }
+//     </>)
+// }
